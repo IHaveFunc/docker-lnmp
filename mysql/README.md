@@ -15,7 +15,7 @@
 https://mariadb.org/
 
 #### Creating an instance
-```
+```shell
 docker run -it --name mysql -p 3306:3306 
 -v /var/lib/mysql:/var/lib/mysql 
 -e MYSQL_DATABASE=wordpressdb 
@@ -39,3 +39,5 @@ mysql:
     - /data/example/mysql:/var/lib/mysql
   restart: always
 ```
+
+[The article comes from](https://github.com/yobasystems/alpine-mariadb/blob/master/alpine-mariadb-amd64/files/run.sh)
