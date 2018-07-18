@@ -17,9 +17,13 @@ RUN echo -e 'http://mirrors.aliyun.com/alpine/v3.7/main\nhttp://mirrors.aliyun.c
         # 
         # pecl install swoole \
         # docker-php-ext-enable swoole \
+        docker-php-ext-install pdo_mysql \
+        docker-php-ext-install pdo_odbc \
+        docker-php-ext-enable pdo_mysql \
+        docker-php-ext-enable pdo_odbc \
         cd /var/www/html \
-        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
-        php composer-setup.php \
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+        php composer-setup.php && \
         mv composer.phar /usr/local/bin/composer 
 
 # COPY . /usr/local/etc/php/
